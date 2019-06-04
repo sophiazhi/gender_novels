@@ -9,10 +9,17 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/convertMarkdown.js') }}"></script>
 
     <!-- Bootstrap modules -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Social sharing -->
+    <meta property="og:image" content="http://gendernovels.digitalhumanitiesmit.org/static/graphics/gender_novels.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gender Novels" />
+    <meta property="og:description" content="Computational Reading of Gender in Novels, 1770–1922" />
 
     <!-- Remarkable module -->
     <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
@@ -35,11 +42,16 @@
 
     <!-- Navbar -->
     <div class="container-fluid header-nav">
-        <nav class="navbar navbar-expand-lg">
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+         <nav class="navbar navbar-expand-sm navbar-light">
+             <button class="navbar-toggler" type="button" data-toggle="collapse"
+                     data-target="#navbarNav" aria-controls="navbarNav"
+                     aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/info/gender_novels_overview"><span>Home</span></a>
+                        <a class="nav-link" href="/info/gender_novels_overview">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,15 +112,18 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/info/team.html"><span>Our Team</span></a>
+                        <a class="nav-link" href="/info/team.html">Our Team</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </nav>
     </div>
 
     <!-- Unique page content -->
-    {% block content %}{% endblock content %}
+    <div class="main" style=background-color:#FCF5E9;">
+        <br>
+        {% block content %}{% endblock content %}
+    </div>
 
     <!-- Footer -->
     <div class="container-fluid footer">
@@ -120,7 +135,7 @@
                          class="img-fluid mx-auto d-block mit-logo"></a>
             </div>
             <div class="col-2 align-self-center">
-                <a href="http://www.digitalhumanitiesmit.org/">
+                <a href="https://digitalhumanities.mit.edu/">
                 <img src="{{ url_for('static', filename='graphics/Dots alone White Transparent.png')
                         }}" alt="Digital Humanities Homepage"
                          class="img-fluid mx-auto d-block">
